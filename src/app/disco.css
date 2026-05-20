@@ -635,6 +635,12 @@
   }
 }
 
+@media (max-width: 381px) {
+  .disco-hero-content {
+    padding-bottom: 140px;
+  }
+}
+
 /* ---- Smooth scroll ---- */
 html:has(.disco-page) {
   scroll-behavior: smooth;
