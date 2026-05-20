@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { BASE_PATH } from "@/lib/constants";
 
 // Set to "video" for the self-hosted clip, or "image" for the static photo
 const HERO_MODE: "video" | "image" = "video";
@@ -43,7 +44,7 @@ export default function Hero() {
       {showImage && (
         <div
           className="absolute inset-0 bg-cover bg-[position:center_30%] bg-no-repeat"
-          style={{ backgroundImage: "url(/images/JT_Bathtub_1.png)" }}
+          style={{ backgroundImage: `url(${BASE_PATH}/images/JT_Bathtub_1.png)` }}
         />
       )}
 
@@ -54,7 +55,7 @@ export default function Hero() {
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-full min-h-full object-cover transition-opacity duration-1000 ${
             videoReady ? "opacity-100" : "opacity-0"
           }`}
-          src="/videos/hero-bg.mp4"
+          src={`${BASE_PATH}/videos/hero-bg.mp4`}
           autoPlay
           loop
           muted

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { streamingLinks, SPOTIFY_EMBED_URI } from "@/lib/constants";
 
 export default function Music() {
-  const hasSpotify = SPOTIFY_EMBED_URI !== "SPOTIFY_URI_HERE";
+  const hasSpotify = (SPOTIFY_EMBED_URI as string) !== "SPOTIFY_URI_HERE";
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { socialLinks, ARTIST_NAME } from "@/lib/constants";
+import { socialLinks, ARTIST_NAME, BASE_PATH } from "@/lib/constants";
 
 const CURRENT_YEAR = 2026;
 
@@ -48,7 +48,7 @@ export default function Footer() {
           className="inline-block mb-8 opacity-50 hover:opacity-100 transition-opacity"
         >
           <img
-            src="/images/sleepy-cat-logo.webp"
+            src={`${BASE_PATH}/images/sleepy-cat-logo.webp`}
             alt="Sleepy Cat Records"
             className="h-12 mx-auto invert"
           />

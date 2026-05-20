@@ -4,6 +4,7 @@ import "./film.css";
 import { useState, useEffect } from "react";
 import {
   ARTIST_NAME,
+  BASE_PATH,
   SPOTIFY_EMBED_URI,
   socialLinks,
   streamingLinks,
@@ -40,7 +41,7 @@ export default function EstatePage() {
       <header className="estate-hero">
         <div className="estate-hero-layout">
           <div className="estate-hero-photo">
-            <img src="/images/print1.jpeg" alt={ARTIST_NAME} />
+            <img src={`${BASE_PATH}/images/print1.jpeg`} alt={ARTIST_NAME} />
           </div>
           <div className="estate-hero-text">
             <h1>{ARTIST_NAME}</h1>
@@ -86,7 +87,7 @@ export default function EstatePage() {
                 ))}
               </ul>
             </div>
-            {mounted && SPOTIFY_EMBED_URI !== "SPOTIFY_URI_HERE" && (
+            {mounted && (SPOTIFY_EMBED_URI as string) !== "SPOTIFY_URI_HERE" && (
               <div className="estate-spotify">
                 <iframe
                   src={`https://open.spotify.com/embed/${SPOTIFY_EMBED_URI}?utm_source=generator&theme=0`}
@@ -171,7 +172,7 @@ export default function EstatePage() {
           <h2>About</h2>
           <div className="estate-about-layout">
             <div className="estate-about-photo">
-              <img src="/images/print2.jpeg" alt={`${ARTIST_NAME}`} />
+              <img src={`${BASE_PATH}/images/print2.jpeg`} alt={`${ARTIST_NAME}`} />
             </div>
             <div className="estate-about-text">
               <p>
@@ -220,11 +221,11 @@ export default function EstatePage() {
               rel="noopener noreferrer"
               className="estate-label"
             >
-              <img src="/images/sleepy-cat-logo.webp" alt="Sleepy Cat Records" />
+              <img src={`${BASE_PATH}/images/sleepy-cat-logo.webp`} alt="Sleepy Cat Records" />
             </a>
             <p>&copy; 2026 {ARTIST_NAME}. All rights reserved.</p>
             <p className="estate-alt-links">
-              <a href="/">Modern version</a> | <a href="/retro">Retro version</a>
+              <a href={`${BASE_PATH}/`}>Modern version</a> | <a href={`${BASE_PATH}/retro`}>Retro version</a>
             </p>
           </div>
         </div>

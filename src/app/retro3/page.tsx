@@ -4,6 +4,7 @@ import "./folk.css";
 import { useState, useEffect } from "react";
 import {
   ARTIST_NAME,
+  BASE_PATH,
   SPOTIFY_EMBED_URI,
   socialLinks,
   streamingLinks,
@@ -74,7 +75,7 @@ export default function FolkPage() {
             <p className="folk-tagline">Singer &#8226; Songwriter &#8226; Guitarist</p>
 
             <div className="folk-hero-img-wrap">
-              <img src="/images/print1.jpeg" alt={ARTIST_NAME} />
+              <img src={`${BASE_PATH}/images/print1.jpeg`} alt={ARTIST_NAME} />
             </div>
 
             <nav className="folk-nav">
@@ -109,7 +110,7 @@ export default function FolkPage() {
                 </a>
               ))}
             </div>
-            {mounted && SPOTIFY_EMBED_URI !== "SPOTIFY_URI_HERE" && (
+            {mounted && (SPOTIFY_EMBED_URI as string) !== "SPOTIFY_URI_HERE" && (
               <div className="folk-spotify">
                 <iframe
                   src={`https://open.spotify.com/embed/${SPOTIFY_EMBED_URI}?utm_source=generator&theme=0`}
@@ -189,7 +190,7 @@ export default function FolkPage() {
           <h2>&#9672; About</h2>
           <div className="folk-about-layout">
             <div className="folk-about-photo">
-              <img src="/images/print2.jpeg" alt={ARTIST_NAME} />
+              <img src={`${BASE_PATH}/images/print2.jpeg`} alt={ARTIST_NAME} />
             </div>
             <div className="folk-about-text">
               <p>
@@ -244,7 +245,7 @@ export default function FolkPage() {
         </a>
         <p>&copy; 2026 {ARTIST_NAME}</p>
         <p className="folk-alt-links">
-          <a href="/">Modern</a> &middot; <a href="/retro">Retro</a> &middot; <a href="/retro2">Estate</a>
+          <a href={`${BASE_PATH}/`}>Modern</a> &middot; <a href={`${BASE_PATH}/retro`}>Retro</a> &middot; <a href={`${BASE_PATH}/retro2`}>Estate</a>
         </p>
       </footer>
     </div>

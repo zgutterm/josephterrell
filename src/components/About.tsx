@@ -1,3 +1,5 @@
+import { BASE_PATH } from "@/lib/constants";
+
 export default function About() {
   return (
     <section id="about" className="py-24 px-6 bg-brand-surface/50">
@@ -6,7 +8,7 @@ export default function About() {
         <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url(/images/indyweek.png)" }}
+            style={{ backgroundImage: `url(${BASE_PATH}/images/indyweek.png)` }}
           />
         </div>
 

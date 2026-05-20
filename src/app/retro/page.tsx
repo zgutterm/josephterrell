@@ -4,6 +4,7 @@ import "./retro.css";
 import { useState, useEffect, useRef } from "react";
 import {
   ARTIST_NAME,
+  BASE_PATH,
   SPOTIFY_EMBED_URI,
   socialLinks,
   streamingLinks,
@@ -152,7 +153,7 @@ export default function RetroPage() {
         <section className="retro-section">
           <div className="retro-img-frame">
             <img
-              src="/images/hero-retro.gif"
+              src={`${BASE_PATH}/images/hero-retro.gif`}
               alt={ARTIST_NAME}
               className="retro-hero-img"
             />
@@ -182,7 +183,7 @@ export default function RetroPage() {
             ))}
           </ul>
 
-          {mounted && SPOTIFY_EMBED_URI !== "SPOTIFY_URI_HERE" && (
+          {mounted && (SPOTIFY_EMBED_URI as string) !== "SPOTIFY_URI_HERE" && (
             <div className="retro-embed-wrap">
               <p className="retro-embed-label">
                 &#128266; Now Playing (Spotify):
@@ -300,7 +301,7 @@ export default function RetroPage() {
           <div className="retro-about-grid">
             <div className="retro-img-frame retro-about-img">
               <img
-                src="/images/indyweek.png"
+                src={`${BASE_PATH}/images/indyweek.png`}
                 alt={`${ARTIST_NAME} press photo`}
               />
             </div>
@@ -423,7 +424,7 @@ export default function RetroPage() {
             Best viewed with Netscape Navigator 4.0 at 800x600
           </p>
           <p className="retro-built">
-            <a href="/">&#9654; View the modern site</a>
+            <a href={`${BASE_PATH}/`}>&#9654; View the modern site</a>
           </p>
         </footer>
       </div>

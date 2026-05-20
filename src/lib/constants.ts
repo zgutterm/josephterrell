@@ -3,6 +3,8 @@ import { SiApplemusic } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 
+export const BASE_PATH = process.env.NODE_ENV === "production" ? "/josephterrell" : "";
+
 export const ARTIST_NAME = "Joseph Terrell";
 
 export const SEATED_ARTIST_ID = "ARTIST_ID_HERE";

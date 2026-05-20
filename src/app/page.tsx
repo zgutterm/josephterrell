@@ -4,6 +4,7 @@ import "./disco.css";
 import { useState, useEffect } from "react";
 import {
   ARTIST_NAME,
+  BASE_PATH,
   SPOTIFY_EMBED_URI,
   socialLinks,
   streamingLinks,
@@ -34,7 +35,7 @@ export default function Home() {
       {/* Hero — massive type */}
       <section className="disco-hero">
         <div className="disco-hero-bg">
-          <img src="/images/print1.jpeg" alt="" />
+          <img src={`${BASE_PATH}/images/print1.jpeg`} alt="" />
         </div>
         <div className="disco-hero-overlay" />
         <div className="disco-hero-content">
@@ -87,7 +88,7 @@ export default function Home() {
               </a>
             ))}
           </div>
-          {mounted && SPOTIFY_EMBED_URI !== "SPOTIFY_URI_HERE" && (
+          {mounted && (SPOTIFY_EMBED_URI as string) !== "SPOTIFY_URI_HERE" && (
             <div className="disco-spotify">
               <iframe
                 src={`https://open.spotify.com/embed/${SPOTIFY_EMBED_URI}?utm_source=generator&theme=0`}
@@ -103,7 +104,7 @@ export default function Home() {
 
       {/* Full-width photo break */}
       <div className="disco-photo-break">
-        <img src="/images/IMG_9172.JPG" alt={ARTIST_NAME} />
+        <img src={`${BASE_PATH}/images/IMG_9172.JPG`} alt={ARTIST_NAME} />
         <div className="disco-photo-break-overlay" />
       </div>
 
@@ -170,7 +171,7 @@ export default function Home() {
       <section id="about" className="disco-section disco-about">
         <div className="disco-split">
           <div className="disco-split-img">
-            <img src="/images/bbjt-32.JPEG" alt={ARTIST_NAME} />
+            <img src={`${BASE_PATH}/images/bbjt-32.JPEG`} alt={ARTIST_NAME} />
           </div>
           <div className="disco-split-text">
             <h2>About</h2>
@@ -230,8 +231,8 @@ export default function Home() {
         </a>
         <p>&copy; 2026 {ARTIST_NAME}. All rights reserved.</p>
         <p className="disco-alt-links">
-          <a href="/original">Original</a> &middot; <a href="/retro">Retro</a> &middot;{" "}
-          <a href="/retro2">Estate</a> &middot; <a href="/retro3">Folk</a>
+          <a href={`${BASE_PATH}/original`}>Original</a> &middot; <a href={`${BASE_PATH}/retro`}>Retro</a> &middot;{" "}
+          <a href={`${BASE_PATH}/retro2`}>Estate</a> &middot; <a href={`${BASE_PATH}/retro3`}>Folk</a>
         </p>
       </footer>
     </div>
