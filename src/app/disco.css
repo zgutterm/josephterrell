@@ -30,6 +30,7 @@
 .disco-hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -583,12 +584,12 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
-  .disco-hero {
-    align-items: flex-end;
-  }
-
   .disco-hero-content {
-    padding-bottom: 240px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 40px;
   }
 
   .disco-title {
@@ -637,7 +638,7 @@
 
 @media (max-width: 381px) {
   .disco-hero-content {
-    padding-bottom: 140px;
+    padding-bottom: 32px;
   }
 }
 
