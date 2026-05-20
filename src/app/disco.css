@@ -586,10 +586,9 @@
 @media (max-width: 640px) {
   .disco-hero-content {
     position: absolute;
-    bottom: 0;
+    top: 38%;
     left: 0;
     right: 0;
-    padding-bottom: 40px;
   }
 
   .disco-title {
@@ -636,11 +635,6 @@
   }
 }
 
-@media (max-width: 381px) {
-  .disco-hero-content {
-    padding-bottom: 32px;
-  }
-}
 
 /* ---- Smooth scroll ---- */
 html:has(.disco-page) {
