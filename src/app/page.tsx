@@ -194,7 +194,6 @@ export default function Home() {
       {/* Newsletter */}
       <section className="disco-section disco-newsletter">
         <h2 className="disco-section-title">Mailing List</h2>
-        <p>Be the first to know about new music, shows, and more.</p>
         <form onSubmit={(e) => e.preventDefault()} className="disco-mail-form">
           <input type="email" placeholder="Email address" />
           <button type="submit">Subscribe</button>
