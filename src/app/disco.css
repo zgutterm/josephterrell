@@ -584,11 +584,17 @@
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
   .disco-hero {
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+  }
+
+  .disco-hero-bg img {
+    object-position: center 30%;
   }
 
   .disco-hero-content {
-    padding-bottom: 240px;
+    padding-bottom: 48px;
   }
 
   .disco-title {
