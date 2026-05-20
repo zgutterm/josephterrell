@@ -230,10 +230,6 @@ export default function Home() {
           Sleepy Cat Records
         </a>
         <p>&copy; 2026 {ARTIST_NAME}. All rights reserved.</p>
-        <p className="disco-alt-links">
-          <a href={`${BASE_PATH}/original`}>Original</a> &middot; <a href={`${BASE_PATH}/retro`}>Retro</a> &middot;{" "}
-          <a href={`${BASE_PATH}/retro2`}>Estate</a> &middot; <a href={`${BASE_PATH}/retro3`}>Folk</a>
-        </p>
       </footer>
     </div>
   );
