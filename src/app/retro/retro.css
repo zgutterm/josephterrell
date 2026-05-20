@@ -1,0 +1,507 @@
+/* ===================================================
+   RETRO THEME — scoped under .retro-page
+   Old-internet throwback, still mobile-friendly
+   =================================================== */
+
+.retro-page {
+  --retro-bg: #1a1a2e;
+  --retro-surface: #16213e;
+  --retro-text: #e0e0e8;
+  --retro-heading: #00ff88;
+  --retro-link: #00ccff;
+  --retro-link-hover: #ff6699;
+  --retro-link-visited: #cc88ff;
+  --retro-border: #00ff88;
+  --retro-accent: #ffcc00;
+  --retro-muted: #888899;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: var(--retro-text);
+  background: var(--retro-bg);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated twinkling starfield via canvas — see RetroStars component */
+.retro-stars-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.retro-container {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+/* ---- Header ---- */
+.retro-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.retro-header-border {
+  border: 2px solid var(--retro-border);
+  padding: 24px 16px;
+  box-shadow:
+    0 0 8px rgba(0, 255, 136, 0.15),
+    inset 0 0 8px rgba(0, 255, 136, 0.05);
+}
+
+.retro-header h1 {
+  font-size: 2.5rem;
+  color: var(--retro-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0 0 4px;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+.retro-subtitle {
+  color: var(--retro-accent);
+  font-size: 0.95rem;
+  margin: 4px 0 16px;
+}
+
+.retro-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+}
+
+.retro-nav a {
+  color: var(--retro-link);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.retro-nav a:hover {
+  color: var(--retro-link-hover);
+  text-decoration: underline;
+}
+
+/* ---- Marquee ---- */
+.retro-marquee-wrap {
+  overflow: hidden;
+  border-top: 1px dashed var(--retro-border);
+  border-bottom: 1px dashed var(--retro-border);
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+
+.retro-marquee {
+  white-space: nowrap;
+  animation: retro-scroll 18s linear infinite;
+  color: var(--retro-accent);
+  font-size: 0.85rem;
+}
+
+@keyframes retro-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ---- Links (global for retro page) ---- */
+.retro-page a {
+  color: var(--retro-link);
+  text-decoration: underline;
+}
+
+.retro-page a:hover {
+  color: var(--retro-link-hover);
+}
+
+.retro-page a:visited {
+  color: var(--retro-link-visited);
+}
+
+/* ---- Sections ---- */
+.retro-section {
+  margin-bottom: 16px;
+}
+
+.retro-section h2 {
+  font-size: 1.4rem;
+  color: var(--retro-heading);
+  border-bottom: 1px solid var(--retro-border);
+  padding-bottom: 6px;
+  margin: 0 0 12px;
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.3);
+}
+
+.retro-section h3 {
+  font-size: 1.1rem;
+  color: var(--retro-heading);
+  margin: 16px 0 8px;
+}
+
+.retro-section p {
+  margin: 8px 0;
+}
+
+/* ---- Divider ---- */
+.retro-divider {
+  text-align: center;
+  color: var(--retro-muted);
+  margin: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* ---- Images ---- */
+.retro-img-frame {
+  border: 2px solid var(--retro-border);
+  padding: 4px;
+  display: inline-block;
+  background: var(--retro-surface);
+  box-shadow: 0 0 6px rgba(0, 255, 136, 0.1);
+}
+
+.retro-hero-img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  image-rendering: auto;
+}
+
+.retro-caption {
+  font-size: 0.8rem;
+  color: var(--retro-muted);
+  text-align: center;
+  margin-top: 6px;
+}
+
+.retro-section > .retro-img-frame {
+  display: block;
+  text-align: center;
+}
+
+.retro-section > .retro-img-frame img {
+  display: block;
+  width: 100%;
+}
+
+/* ---- Link list ---- */
+.retro-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 16px;
+}
+
+.retro-link-list li {
+  margin: 4px 0;
+}
+
+/* ---- Spotify embed ---- */
+.retro-embed-wrap {
+  margin-top: 16px;
+  border: 1px dashed var(--retro-border);
+  padding: 12px;
+}
+
+.retro-embed-label {
+  font-size: 0.85rem;
+  color: var(--retro-accent);
+  margin: 0 0 8px;
+}
+
+.retro-spotify {
+  border: none;
+  border-radius: 8px;
+}
+
+/* ---- Videos ---- */
+.retro-video-main {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.retro-video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--retro-border);
+}
+
+.retro-video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--retro-surface);
+  border: 2px solid var(--retro-border);
+}
+
+.retro-video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.retro-video-btn {
+  background: none;
+  border: 1px solid var(--retro-muted);
+  color: var(--retro-link);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.retro-video-btn:hover {
+  border-color: var(--retro-link);
+  background: rgba(0, 204, 255, 0.05);
+}
+
+.retro-video-btn.active {
+  border-color: var(--retro-heading);
+  color: var(--retro-heading);
+  background: rgba(0, 255, 136, 0.08);
+}
+
+/* ---- Tour table ---- */
+.retro-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 12px 0;
+}
+
+.retro-table th,
+.retro-table td {
+  border: 1px solid var(--retro-muted);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.retro-table th {
+  background: var(--retro-surface);
+  color: var(--retro-heading);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.retro-table tr:hover {
+  background: rgba(0, 255, 136, 0.04);
+}
+
+.retro-note {
+  font-size: 0.8rem;
+  color: var(--retro-accent);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ---- About grid ---- */
+.retro-about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.retro-about-img {
+  max-width: 280px;
+}
+
+.retro-about-img img {
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .retro-about-grid {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+/* ---- Guestbook ---- */
+.retro-guestbook-form {
+  border: 1px solid var(--retro-muted);
+  padding: 12px;
+  margin: 12px 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.retro-guestbook-form div {
+  margin-bottom: 8px;
+}
+
+.retro-guestbook-form label {
+  display: block;
+  color: var(--retro-heading);
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.retro-guestbook-form input,
+.retro-guestbook-form textarea {
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  padding: 6px 8px;
+  background: var(--retro-bg);
+  border: 1px solid var(--retro-muted);
+  color: var(--retro-text);
+  box-sizing: border-box;
+}
+
+.retro-guestbook-form input:focus,
+.retro-guestbook-form textarea:focus {
+  border-color: var(--retro-link);
+  outline: none;
+}
+
+.retro-guestbook-form button,
+.retro-mail-form button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  background: var(--retro-surface);
+  border: 1px solid var(--retro-heading);
+  color: var(--retro-heading);
+  cursor: pointer;
+}
+
+.retro-guestbook-form button:hover,
+.retro-mail-form button:hover {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.retro-guestbook-entries {
+  margin: 16px 0;
+}
+
+.retro-gb-entry {
+  border-bottom: 1px dotted var(--retro-muted);
+  padding: 8px 0;
+  font-size: 0.85rem;
+}
+
+.retro-gb-date {
+  color: var(--retro-muted);
+  font-size: 0.75rem;
+}
+
+/* ---- Mailing list ---- */
+.retro-mail-form {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+.retro-mail-form input {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  padding: 6px 8px;
+  background: var(--retro-bg);
+  border: 1px solid var(--retro-muted);
+  color: var(--retro-text);
+  flex: 1;
+  min-width: 200px;
+}
+
+.retro-mail-form input:focus {
+  border-color: var(--retro-link);
+  outline: none;
+}
+
+/* ---- Footer ---- */
+.retro-footer {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.retro-footer p {
+  margin: 6px 0;
+}
+
+.retro-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 12px;
+  margin: 8px 0 16px;
+}
+
+.retro-social-links a {
+  font-size: 0.8rem;
+}
+
+.retro-label-link {
+  margin: 16px 0;
+}
+
+.retro-label-link a {
+  color: var(--retro-accent);
+  font-size: 0.9rem;
+}
+
+.retro-counter {
+  margin: 16px 0;
+  padding: 8px 16px;
+  display: inline-block;
+  border: 1px solid var(--retro-muted);
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.8rem;
+  color: var(--retro-accent);
+}
+
+.retro-copy {
+  color: var(--retro-muted);
+  margin-top: 16px !important;
+}
+
+.retro-best-viewed {
+  color: var(--retro-muted);
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+.retro-built a {
+  color: var(--retro-link);
+  font-size: 0.85rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .retro-header h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+  }
+
+  .retro-table {
+    font-size: 0.75rem;
+  }
+
+  .retro-table th,
+  .retro-table td {
+    padding: 6px;
+  }
+
+  .retro-container {
+    padding: 12px 10px 32px;
+  }
+}
+
+/* Smooth scroll */
+.retro-page {
+  scroll-behavior: smooth;
+}

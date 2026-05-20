@@ -1,0 +1,595 @@
+/* ===================================================
+   ESTATE THEME — stately heritage site
+   Inspired by seanconnery.com: formal, structured,
+   color bands, serif headlines, lots of breathing room
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+.estate-page {
+  --estate-navy: #1B2A4A;
+  --estate-navy-light: #2C3E6B;
+  --estate-amber: #C4873B;
+  --estate-amber-light: #D9A35C;
+  --estate-cream: #FAF8F4;
+  --estate-white: #FFFFFF;
+  --estate-text: #2D2D2D;
+  --estate-muted: #6E6E6E;
+  --estate-border: #D8D3CA;
+  --estate-green: #3D5C3A;
+  --estate-green-bg: #E2EDDF;
+  --estate-amber-bg: #F2D9B8;
+
+  font-family: 'Source Sans 3', -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--estate-text);
+  background: var(--estate-white);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Top accent stripe ---- */
+.estate-stripe {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--estate-green) 0%,
+    var(--estate-green) 33%,
+    var(--estate-navy) 33%,
+    var(--estate-navy) 66%,
+    var(--estate-amber) 66%,
+    var(--estate-amber) 100%
+  );
+}
+
+/* ---- Nav ---- */
+.estate-nav {
+  background: var(--estate-navy);
+}
+
+.estate-nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.estate-nav a {
+  display: block;
+  padding: 14px 28px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.estate-nav a:hover {
+  background: var(--estate-navy-light);
+  color: #fff;
+}
+
+.estate-nav a.active {
+  color: var(--estate-amber);
+}
+
+/* ---- Hero ---- */
+.estate-hero {
+  background: var(--estate-cream);
+  padding: 60px 32px;
+}
+
+.estate-hero-layout {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .estate-hero-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+.estate-hero-photo {
+  border: 6px solid var(--estate-white);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.estate-hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.estate-hero-text h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 8px;
+  color: var(--estate-navy);
+}
+
+.estate-tagline {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--estate-amber);
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.estate-bio-intro {
+  color: var(--estate-muted);
+  margin: 0 0 24px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.estate-social {
+  display: flex;
+  gap: 14px;
+}
+
+.estate-social a {
+  color: var(--estate-navy);
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.estate-social a:hover {
+  color: var(--estate-amber);
+}
+
+/* ---- Main ---- */
+.estate-main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Sections ---- */
+.estate-section {
+  padding: 56px 32px;
+}
+
+.estate-section > *:not(.estate-music-layout):not(.estate-about-layout):not(.estate-video-player):not(.estate-video-nav):not(.estate-table):not(.estate-mail-form) {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.estate-music-layout,
+.estate-about-layout,
+.estate-table,
+.estate-video-player,
+.estate-video-nav,
+.estate-mail-form {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Alternating background colors */
+.estate-section:nth-child(odd) {
+  background: var(--estate-white);
+}
+
+.estate-section:nth-child(even) {
+  background: var(--estate-green-bg);
+}
+
+/* Newsletter always gets the amber tint */
+.estate-newsletter {
+  background: var(--estate-amber-bg) !important;
+}
+
+.estate-section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--estate-navy);
+  margin: 0 0 24px;
+}
+
+.estate-section:nth-child(even) h2 {
+  color: var(--estate-green);
+}
+
+.estate-section h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--estate-navy);
+  margin: 0 0 12px;
+}
+
+.estate-section p {
+  margin: 8px 0;
+}
+
+/* ---- Music ---- */
+.estate-music-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .estate-music-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.estate-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.estate-link-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--estate-border);
+}
+
+.estate-link-list a {
+  color: var(--estate-navy);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.estate-link-list a:hover {
+  color: var(--estate-amber);
+}
+
+.estate-spotify iframe {
+  border: none;
+  border-radius: 8px;
+}
+
+/* ---- Tour table ---- */
+.estate-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.estate-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--estate-muted);
+  padding: 8px 12px 8px 0;
+  border-bottom: 2px solid var(--estate-navy);
+}
+
+.estate-table td {
+  padding: 14px 12px 14px 0;
+  border-bottom: 1px solid var(--estate-border);
+  font-size: 0.95rem;
+}
+
+.estate-table tr:hover {
+  background: var(--estate-cream);
+}
+
+.estate-ticket-link {
+  display: inline-block;
+  padding: 5px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--estate-navy);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.estate-ticket-link:hover {
+  background: var(--estate-amber);
+}
+
+.estate-ticket-link.sold-out {
+  background: var(--estate-border);
+  color: var(--estate-muted);
+  pointer-events: none;
+}
+
+/* ---- Videos ---- */
+.estate-video-player {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.estate-video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.estate-video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--estate-cream);
+}
+
+.estate-video-nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.estate-video-nav button {
+  flex-shrink: 0;
+  width: 120px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: all 0.2s;
+  padding: 0;
+  background: none;
+}
+
+.estate-video-nav button:hover {
+  opacity: 0.75;
+}
+
+.estate-video-nav button.active {
+  opacity: 1;
+  border-color: var(--estate-amber);
+}
+
+.estate-video-nav button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- About ---- */
+.estate-about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .estate-about-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+.estate-about-photo {
+  border: 6px solid var(--estate-white);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.estate-about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.estate-about-text p {
+  margin: 0 0 16px;
+  color: var(--estate-text);
+  line-height: 1.8;
+}
+
+/* ---- Newsletter ---- */
+.estate-newsletter {
+  text-align: center;
+  padding: 56px 32px !important;
+}
+
+.estate-newsletter h2 {
+  margin-bottom: 8px;
+}
+
+.estate-newsletter p {
+  color: var(--estate-muted);
+  margin-bottom: 20px;
+}
+
+.estate-mail-form {
+  display: flex;
+  gap: 0;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.estate-mail-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--estate-border);
+  border-right: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--estate-text);
+  outline: none;
+}
+
+.estate-mail-form input:focus {
+  border-color: var(--estate-navy);
+}
+
+.estate-mail-form button {
+  padding: 12px 24px;
+  border: none;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--estate-navy);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.estate-mail-form button:hover {
+  background: var(--estate-amber);
+}
+
+/* ---- Footer ---- */
+.estate-footer {
+  background: var(--estate-navy);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 40px 32px;
+}
+
+.estate-footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.estate-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estate-footer-nav a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.estate-footer-nav a:hover {
+  color: var(--estate-amber);
+}
+
+.estate-footer-meta p {
+  margin: 6px 0;
+  font-size: 0.8rem;
+}
+
+.estate-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  opacity: 0.35;
+  transition: opacity 0.2s;
+}
+
+.estate-label:hover {
+  opacity: 0.7;
+}
+
+.estate-label img {
+  height: 30px;
+  filter: invert(1);
+}
+
+.estate-alt-links {
+  margin-top: 12px !important;
+}
+
+.estate-alt-links a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.estate-alt-links a:hover {
+  color: var(--estate-amber-light);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .estate-nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .estate-nav a {
+    padding: 10px 16px;
+    font-size: 0.72rem;
+  }
+
+  .estate-hero {
+    padding: 32px 20px;
+  }
+
+  .estate-hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .estate-main {
+    padding: 0;
+  }
+
+  .estate-section {
+    padding: 36px 20px;
+  }
+
+  .estate-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .estate-table th,
+  .estate-table td {
+    padding: 10px 6px 10px 0;
+    font-size: 0.82rem;
+  }
+
+  .estate-footer-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .estate-mail-form {
+    flex-direction: column;
+  }
+
+  .estate-mail-form input {
+    border-right: 1px solid var(--estate-border);
+  }
+}
+
+/* ---- Smooth scroll ---- */
+html:has(.estate-page) {
+  scroll-behavior: smooth;
+}
+
+/* ---- Selection ---- */
+.estate-page ::selection {
+  background: var(--estate-amber);
+  color: var(--estate-white);
+}

@@ -1,0 +1,531 @@
+/* ===================================================
+   70s FOLK SCENE — Laurel Canyon / Fillmore / vinyl era
+   Concert poster feel, parchment texture, earthy warmth
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+.folk-page {
+  --folk-parchment: #F5ECD7;
+  --folk-cream: #FDF8EE;
+  --folk-ink: #3B2912;
+  --folk-brown: #6B4226;
+  --folk-burnt: #C2552A;
+  --folk-mustard: #D4A528;
+  --folk-olive: #5C6B3C;
+  --folk-rust: #A0522D;
+  --folk-muted: #8C7A62;
+  --folk-border: #C9B99A;
+
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--folk-ink);
+  background-color: var(--folk-parchment);
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='6' fill='none' stroke='%23C9B99A' stroke-width='0.8'/%3E%3Ccircle cx='40' cy='40' r='12' fill='none' stroke='%23C9B99A' stroke-width='0.5'/%3E%3Cline x1='40' y1='26' x2='40' y2='20' stroke='%23D4A528' stroke-width='0.6'/%3E%3Cline x1='40' y1='54' x2='40' y2='60' stroke='%23D4A528' stroke-width='0.6'/%3E%3Cline x1='26' y1='40' x2='20' y2='40' stroke='%23D4A528' stroke-width='0.6'/%3E%3Cline x1='54' y1='40' x2='60' y2='40' stroke='%23D4A528' stroke-width='0.6'/%3E%3Cline x1='31' y1='31' x2='27' y2='27' stroke='%235C6B3C' stroke-width='0.5'/%3E%3Cline x1='49' y1='31' x2='53' y2='27' stroke='%235C6B3C' stroke-width='0.5'/%3E%3Cline x1='31' y1='49' x2='27' y2='53' stroke='%235C6B3C' stroke-width='0.5'/%3E%3Cline x1='49' y1='49' x2='53' y2='53' stroke='%235C6B3C' stroke-width='0.5'/%3E%3Ccircle cx='0' cy='0' r='3' fill='%23C2552A' fill-opacity='0.12'/%3E%3Ccircle cx='80' cy='0' r='3' fill='%23C2552A' fill-opacity='0.12'/%3E%3Ccircle cx='0' cy='80' r='3' fill='%23C2552A' fill-opacity='0.12'/%3E%3Ccircle cx='80' cy='80' r='3' fill='%23C2552A' fill-opacity='0.12'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ---- Paper grain texture ---- */
+.folk-texture {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px;
+  mix-blend-mode: multiply;
+}
+
+/* ---- Hero / Concert poster ---- */
+.folk-hero {
+  padding: 40px 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.folk-poster {
+  max-width: 760px;
+  width: 100%;
+  background: var(--folk-cream);
+  padding: 8px;
+  box-shadow: 0 4px 24px rgba(59, 41, 18, 0.12);
+}
+
+.folk-poster-border {
+  border: 2px solid var(--folk-brown);
+  padding: 36px 28px 28px;
+  text-align: center;
+  position: relative;
+}
+
+.folk-presents {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--folk-olive);
+  margin: 0 0 4px;
+}
+
+.folk-name {
+  font-family: 'Alfa Slab One', 'Georgia', serif;
+  font-size: 3rem;
+  line-height: 1.05;
+  color: var(--folk-burnt);
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.folk-tagline {
+  font-size: 0.95rem;
+  color: var(--folk-brown);
+  letter-spacing: 0.1em;
+  margin: 8px 0 24px;
+  font-style: italic;
+}
+
+.folk-hero-img-wrap {
+  margin: 0 auto 24px;
+  max-width: 560px;
+  border: 3px solid var(--folk-border);
+  padding: 3px;
+  background: var(--folk-parchment);
+}
+
+.folk-hero-img-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: sepia(0.15) contrast(0.95) saturate(0.85);
+}
+
+.folk-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.folk-nav a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--folk-brown);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.folk-nav a:hover {
+  color: var(--folk-burnt);
+  border-bottom-color: var(--folk-burnt);
+}
+
+/* ---- Dividers ---- */
+.folk-divider {
+  text-align: center;
+  padding: 32px 0;
+  color: var(--folk-mustard);
+}
+
+.folk-sun {
+  width: 50px;
+  height: 40px;
+}
+
+.folk-wave {
+  width: 200px;
+  height: 16px;
+}
+
+/* ---- Main ---- */
+.folk-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+/* ---- Sections ---- */
+.folk-section {
+  margin-bottom: 8px;
+}
+
+.folk-section h2 {
+  font-family: 'Alfa Slab One', Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--folk-burnt);
+  text-align: center;
+  margin: 0 0 24px;
+  letter-spacing: 0.03em;
+}
+
+/* ---- Music ---- */
+.folk-music-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 600px) {
+  .folk-music-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.folk-subhead {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--folk-olive);
+  margin: 0 0 8px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.folk-text-link {
+  display: block;
+  color: var(--folk-brown);
+  text-decoration: none;
+  padding: 6px 0;
+  font-size: 1rem;
+  transition: color 0.2s;
+  border-bottom: 1px dotted var(--folk-border);
+}
+
+.folk-text-link:hover {
+  color: var(--folk-burnt);
+}
+
+.folk-spotify iframe {
+  border: none;
+  border-radius: 8px;
+}
+
+/* ---- Tour — handbill style ---- */
+.folk-handbill {
+  background: var(--folk-cream);
+  border: 2px solid var(--folk-border);
+  padding: 4px;
+}
+
+.folk-show {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px dashed var(--folk-border);
+}
+
+.folk-show:last-child {
+  border-bottom: none;
+}
+
+.folk-show-date {
+  font-family: 'Alfa Slab One', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--folk-burnt);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.folk-show-details {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.folk-show-details em {
+  color: var(--folk-muted);
+}
+
+.folk-show-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--folk-olive);
+  border: 1px solid var(--folk-olive);
+  padding: 4px 12px;
+  white-space: nowrap;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.folk-show-status:hover {
+  background: var(--folk-olive);
+  color: var(--folk-cream);
+}
+
+.folk-show-status.sold-out {
+  color: var(--folk-muted);
+  border-color: var(--folk-muted);
+  text-decoration: line-through;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ---- Videos ---- */
+.folk-video-player {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 14px;
+  border: 3px solid var(--folk-border);
+  background: var(--folk-ink);
+}
+
+.folk-video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.folk-video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--folk-border);
+}
+
+.folk-video-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.folk-video-thumbs button {
+  flex-shrink: 0;
+  width: 100px;
+  aspect-ratio: 16 / 9;
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: all 0.2s;
+  padding: 0;
+  background: none;
+  overflow: hidden;
+}
+
+.folk-video-thumbs button:hover {
+  opacity: 0.75;
+}
+
+.folk-video-thumbs button.active {
+  opacity: 1;
+  border-color: var(--folk-mustard);
+}
+
+.folk-video-thumbs button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(0.2);
+}
+
+/* ---- About ---- */
+.folk-about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (min-width: 600px) {
+  .folk-about-layout {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+.folk-about-photo {
+  border: 3px solid var(--folk-border);
+  padding: 3px;
+  background: var(--folk-cream);
+}
+
+.folk-about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: sepia(0.15) contrast(0.95) saturate(0.85);
+}
+
+.folk-about-text p {
+  margin: 0 0 16px;
+  line-height: 1.85;
+}
+
+/* ---- Mailing list ---- */
+.folk-mailing {
+  text-align: center;
+  background: var(--folk-cream);
+  border: 2px solid var(--folk-border);
+  padding: 40px 28px;
+}
+
+.folk-mailing p {
+  color: var(--folk-muted);
+  font-style: italic;
+  margin: 0 0 20px;
+}
+
+.folk-mail-form {
+  display: flex;
+  gap: 0;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.folk-mail-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--folk-border);
+  border-right: none;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.9rem;
+  background: var(--folk-parchment);
+  color: var(--folk-ink);
+  outline: none;
+}
+
+.folk-mail-form input:focus {
+  border-color: var(--folk-brown);
+}
+
+.folk-mail-form button {
+  padding: 10px 20px;
+  border: 1px solid var(--folk-burnt);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--folk-burnt);
+  color: var(--folk-cream);
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.folk-mail-form button:hover {
+  background: var(--folk-brown);
+  border-color: var(--folk-brown);
+}
+
+/* ---- Footer ---- */
+.folk-footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 2px solid var(--folk-border);
+  font-size: 0.85rem;
+  color: var(--folk-muted);
+}
+
+.folk-footer p {
+  margin: 6px 0;
+}
+
+.folk-footer-social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 16px;
+}
+
+.folk-footer-social a {
+  color: var(--folk-brown);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.folk-footer-social a:hover {
+  color: var(--folk-burnt);
+}
+
+.folk-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--folk-olive);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.folk-label:hover {
+  color: var(--folk-burnt);
+}
+
+.folk-alt-links a {
+  color: var(--folk-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.folk-alt-links a:hover {
+  color: var(--folk-burnt);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .folk-name {
+    font-size: 2rem;
+  }
+
+  .folk-poster-border {
+    padding: 24px 16px 20px;
+  }
+
+  .folk-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .folk-show {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding: 12px;
+  }
+
+  .folk-show-date {
+    min-width: auto;
+  }
+
+  .folk-mail-form {
+    flex-direction: column;
+  }
+
+  .folk-mail-form input {
+    border-right: 1px solid var(--folk-border);
+  }
+
+  .folk-nav {
+    gap: 12px 18px;
+  }
+}
+
+/* ---- Smooth scroll ---- */
+html:has(.folk-page) {
+  scroll-behavior: smooth;
+}
+
+/* ---- Selection ---- */
+.folk-page ::selection {
+  background: var(--folk-mustard);
+  color: var(--folk-ink);
+}
