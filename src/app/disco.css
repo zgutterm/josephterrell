@@ -588,11 +588,11 @@
   }
 
   .disco-hero-content {
-    padding-bottom: 180px;
+    padding-bottom: 240px;
   }
 
   .disco-title {
-    font-size: clamp(3.5rem, 14vw, 5.5rem);
+    font-size: clamp(4rem, 16vw, 6rem);
   }
 
   .disco-tagline {
