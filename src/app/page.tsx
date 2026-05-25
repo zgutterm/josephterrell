@@ -28,7 +28,15 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [activeVideo, setActiveVideo] = useState(0);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+
+    const script = document.createElement("script");
+    script.src = "https://widget.seated.com/app.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
 
   return (
     <div className="disco-page">
@@ -111,27 +119,11 @@ export default function Home() {
       {/* Tour */}
       <section id="shows" className="disco-section disco-tour">
         <h2 className="disco-section-title">Shows</h2>
-        <div className="disco-tour-grid">
-          {[
-            { date: "JUN 15", city: "Asheville, NC", venue: "The Orange Peel", avail: true },
-            { date: "JUN 22", city: "Nashville, TN", venue: "The Ryman", avail: true },
-            { date: "JUL 04", city: "Floyd, VA", venue: "Floyd Fest", avail: true },
-            { date: "JUL 18", city: "Brooklyn, NY", venue: "Brooklyn Bowl", avail: true },
-            { date: "AUG 01", city: "Denver, CO", venue: "Red Rocks", avail: false },
-          ].map((show, i) => (
-            <div key={i} className="disco-tour-card">
-              <span className="disco-tour-date">{show.date}</span>
-              <span className="disco-tour-venue">{show.venue}</span>
-              <span className="disco-tour-city">{show.city}</span>
-              <a
-                href="#"
-                className={`disco-tour-btn ${!show.avail ? "sold-out" : ""}`}
-              >
-                {show.avail ? "Get Tickets" : "Sold Out"}
-              </a>
-            </div>
-          ))}
-        </div>
+        <div
+          id="seated-55fdf2c0"
+          data-artist-id="b8c45bf9-ae1c-4dee-9fdd-84576413c771"
+          data-css-version="3"
+        />
       </section>
 
       <GradientBar colors="coral-violet" />
