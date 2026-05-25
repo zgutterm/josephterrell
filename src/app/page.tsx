@@ -119,11 +119,13 @@ export default function Home() {
       {/* Tour */}
       <section id="shows" className="disco-section disco-tour">
         <h2 className="disco-section-title">Shows</h2>
-        <div
-          id="seated-55fdf2c0"
-          data-artist-id="b8c45bf9-ae1c-4dee-9fdd-84576413c771"
-          data-css-version="3"
-        />
+        <div className="disco-tour-container">
+          <div
+            id="seated-55fdf2c0"
+            data-artist-id="b8c45bf9-ae1c-4dee-9fdd-84576413c771"
+            data-css-version="3"
+          />
+        </div>
       </section>
 
       <GradientBar colors="coral-violet" />

@@ -292,7 +292,7 @@
 }
 
 .disco-stream-pill:hover {
-  background: var(--disco-gold);
+  background: linear-gradient(90deg, var(--disco-gold), var(--disco-coral));
   border-color: var(--disco-gold);
   color: var(--disco-bg);
 }
@@ -334,6 +334,53 @@
 /* ---- Tour ---- */
 .disco-tour {
   background: var(--disco-bg);
+}
+
+.disco-tour-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.disco-tour-container a.seated-event-link,
+.disco-tour-container button {
+  background: var(--disco-gold) !important;
+  color: var(--disco-bg) !important;
+  border: none !important;
+  border-radius: 3px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+
+.disco-tour-container a.seated-event-link:hover,
+.disco-tour-container button:hover {
+  background: #e0b44e !important;
+  transform: translateY(-1px) !important;
+}
+
+.disco-tour-container a.seated-event-link1-find-tickets {
+  background: transparent !important;
+  color: var(--disco-cream) !important;
+  border: 1px solid var(--disco-muted) !important;
+}
+
+.disco-tour-container a.seated-event-link1-find-tickets:hover {
+  border-color: var(--disco-cream) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+
+.disco-tour-container a[href*="sold" i],
+.disco-tour-container a[class*="sold" i],
+.disco-tour-container button[class*="sold" i],
+.disco-tour-container a[disabled],
+.disco-tour-container button[disabled] {
+  background: var(--disco-border) !important;
+  color: var(--disco-muted) !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  opacity: 0.7 !important;
 }
 
 .disco-tour-grid {
@@ -383,13 +430,13 @@
   letter-spacing: 0.1em;
   text-decoration: none;
   color: var(--disco-bg);
-  background: var(--disco-gold);
+  background: linear-gradient(90deg, var(--disco-gold), var(--disco-coral));
   transition: all 0.2s;
   white-space: nowrap;
 }
 
 .disco-tour-btn:hover {
-  background: var(--disco-coral);
+  filter: brightness(1.1);
 }
 
 .disco-tour-btn.sold-out {
@@ -518,7 +565,7 @@
   letter-spacing: 0.1em;
   color: var(--disco-bg);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: filter 0.2s;
 }
 
 .disco-mail-form button:hover {
