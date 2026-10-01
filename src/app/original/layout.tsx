@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans } from "next/font/google";
+import { Outfit, DM_Sans, Caveat } from "next/font/google";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -12,6 +12,13 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: "500",
   display: "swap",
 });
 
@@ -28,7 +35,7 @@ export default function OriginalLayout({
 }>) {
   return (
     <div
-      className={`${outfit.variable} ${dmSans.variable} flex flex-1 flex-col bg-brand-dark font-body`}
+      className={`${outfit.variable} ${dmSans.variable} ${caveat.variable} flex flex-1 flex-col bg-brand-dark font-body`}
     >
       {children}
     </div>

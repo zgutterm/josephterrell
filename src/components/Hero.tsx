@@ -56,7 +56,7 @@ export default function Hero() {
           <h1 className="font-display font-semibold text-5xl text-brand-offwhite mb-3 md:sr-only">
             {ARTIST_NAME}
           </h1>
-          <p className="text-lg md:text-2xl text-brand-offwhite/90 text-balance">
+          <p className="font-[family-name:var(--font-caveat)] text-2xl md:text-4xl tracking-wide text-brand-offwhite text-balance">
             Singer, songwriter, and guitarist from North Carolina
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-4">
