@@ -62,7 +62,7 @@ export default function Nav() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="text-sm uppercase tracking-widest text-brand-cream/70 hover:text-brand-teal transition-colors"
+                className="text-sm uppercase tracking-widest text-brand-cream hover:text-brand-teal transition-colors"
               >
                 {item.label}
               </a>
@@ -75,6 +75,7 @@ export default function Nav() {
           onClick={() => setOpen(!open)}
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <span
             className={`block w-6 h-0.5 bg-brand-cream transition-transform ${open ? "rotate-45 translate-y-2" : ""}`}
@@ -97,7 +98,7 @@ export default function Nav() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm uppercase tracking-widest text-brand-cream/70 hover:text-brand-teal transition-colors"
+                  className="text-sm uppercase tracking-widest text-brand-cream hover:text-brand-teal transition-colors"
                 >
                   {item.label}
                 </a>

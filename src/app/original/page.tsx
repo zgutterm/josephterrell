@@ -16,8 +16,8 @@ export default function Home() {
         <Music />
         <TourDates />
         <Videos />
-        <Newsletter />
         <About />
+        <Newsletter />
       </main>
       <Footer />
     </>

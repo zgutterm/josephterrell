@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { BASE_PATH } from "@/lib/constants";
-
-// Set to "video" for the self-hosted clip, or "image" for the static photo
-const HERO_MODE: "video" | "image" = "video";
+import { ARTIST_NAME, BASE_PATH, socialLinks } from "@/lib/constants";
 
 export default function Hero() {
   const [videoReady, setVideoReady] = useState(false);
@@ -12,60 +9,83 @@ export default function Hero() {
 
   useEffect(() => {
     const v = videoRef.current;
-    if (!v || HERO_MODE !== "video") return;
+    if (!v) return;
 
-    function markReady() {
-      setVideoReady(true);
-    }
-
-    // In case the video is already playing (event fired before hydration)
-    if (v.readyState >= 3) {
-      markReady();
+    // Respect reduced-motion: leave the still image in place
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      v.pause();
       return;
     }
 
+    const markReady = () => setVideoReady(true);
     v.addEventListener("playing", markReady, { once: true });
+    // Autoplay can be blocked (e.g. Low Power Mode); the still stays visible if so
+    v.play().catch(() => {});
     return () => v.removeEventListener("playing", markReady);
   }, []);
 
-  const showImage = HERO_MODE === "image";
-  const showLoader = HERO_MODE === "video" && !videoReady;
-
   return (
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-brand-dark">
-      {/* Loading spinner while video buffers */}
-      {showLoader && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="w-10 h-10 border-2 border-brand-cream/20 border-t-brand-amber rounded-full animate-spin" />
-        </div>
-      )}
+    <section className="relative w-full h-screen h-[100svh] min-h-[560px] overflow-hidden bg-brand-dark">
+      {/* Still frame — shown until the video is playing, and whenever it can't */}
+      <img
+        src={`${BASE_PATH}/images/hero-video-poster.jpg`}
+        alt=""
+        fetchPriority="high"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-      {/* Static image — only used in image mode */}
-      {showImage && (
-        <div
-          className="absolute inset-0 bg-cover bg-[position:center_30%] bg-no-repeat"
-          style={{ backgroundImage: `url(${BASE_PATH}/images/JT_Bathtub_1.png)` }}
-        />
-      )}
-
-      {/* Self-hosted video background */}
-      {HERO_MODE === "video" && (
-        <video
-          ref={videoRef}
-          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-full min-h-full object-cover transition-opacity duration-1000 ${
-            videoReady ? "opacity-100" : "opacity-0"
-          }`}
-          src={`${BASE_PATH}/videos/hero-bg.mp4`}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-        />
-      )}
+      <video
+        ref={videoRef}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+          videoReady ? "opacity-100" : "opacity-0"
+        }`}
+        src={`${BASE_PATH}/videos/hero-bg.mp4`}
+        loop
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
 
       {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-brand-dark/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/25 to-brand-dark/30 pointer-events-none" />
+
+      <div className="absolute inset-x-0 bottom-0 px-6 pb-[calc(3rem+env(safe-area-inset-bottom))] md:pb-16">
+        <div className="max-w-5xl mx-auto text-center md:text-left">
+          {/* On desktop the large name lives in the nav */}
+          <h1 className="font-display font-semibold text-5xl text-brand-offwhite mb-3 md:sr-only">
+            {ARTIST_NAME}
+          </h1>
+          <p className="text-lg md:text-2xl text-brand-offwhite/90 text-balance">
+            Singer, songwriter, and guitarist from North Carolina
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <a
+              href="#music"
+              className="px-8 py-3 bg-brand-amber text-brand-dark font-medium rounded-full hover:bg-brand-amber-light transition-colors uppercase text-sm tracking-widest"
+            >
+              Listen
+            </a>
+            <div className="flex items-center">
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.name}
+                    className="w-11 h-11 inline-flex items-center justify-center text-xl text-brand-offwhite/80 hover:text-brand-amber transition-colors"
+                  >
+                    <Icon aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

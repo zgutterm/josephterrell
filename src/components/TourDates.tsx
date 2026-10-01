@@ -5,12 +5,12 @@ import { SEATED_ARTIST_ID } from "@/lib/constants";
 
 export default function TourDates() {
   return (
-    <section id="tour" className="py-24 px-6 bg-brand-surface/50">
+    <section id="tour" className="py-24 px-6 bg-brand-surface/50 scroll-mt-16">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-display text-4xl sm:text-5xl text-brand-offwhite mb-4 text-center">
           Tour Dates
         </h2>
-        <p className="text-brand-cream/60 mb-12 text-center max-w-lg mx-auto">
+        <p className="text-brand-cream/80 mb-12 text-center max-w-lg mx-auto">
           Catch a show near you
         </p>
 
@@ -26,7 +26,8 @@ export default function TourDates() {
         ) : (
           <>
             <div
-              id="seated-55f07390"
+              className="min-h-24 text-center text-brand-cream [&_.seated-no-events]:text-lg"
+              id="seated-55fdf2c0"
               data-artist-id={SEATED_ARTIST_ID}
               data-css-version="3"
             />
