@@ -1,13 +1,20 @@
 import { FaSpotify, FaInstagram, FaYoutube, FaTiktok, FaBandcamp } from "react-icons/fa";
 import { SiApplemusic } from "react-icons/si";
-import { FaXTwitter } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 
 export const BASE_PATH = process.env.NODE_ENV === "production" ? "/josephterrell" : "";
 
 export const ARTIST_NAME = "Joseph Terrell";
 
-export const SEATED_ARTIST_ID = "ARTIST_ID_HERE";
+export const SITE_URL = "https://zgutterm.github.io/josephterrell";
+
+export const SEATED_ARTIST_ID: string = "b8c45bf9-ae1c-4dee-9fdd-84576413c771";
+
+// Contact addresses — the Contact section stays hidden until at least one is filled in
+export const contactEmails: { label: string; email: string }[] = [
+  { label: "Booking", email: "" },
+  { label: "General", email: "" },
+];
 
 // Spotify embed URI — can be an artist, album, or playlist
 // e.g. "artist/1234", "album/5678", "playlist/abcd"
@@ -37,11 +44,11 @@ export const streamingLinks = [
 ];
 
 export const videos = [
-  { id: "geyaaRPtNuA" },
-  { id: "5_DNz8sRoJ4" },
-  { id: "GURdxSBjy5s" },
-  { id: "zimqCpE8gd0" },
-  { id: "LVLUDrEF7YY" },
+  { id: "geyaaRPtNuA", title: "Sing No More" },
+  { id: "5_DNz8sRoJ4", title: "Hold You In The Light (Live)" },
+  { id: "GURdxSBjy5s", title: "Every Dollar" },
+  { id: "zimqCpE8gd0", title: "Tallest House of Cards (featuring Charly Lowry)" },
+  { id: "LVLUDrEF7YY", title: "Persimmon (Official Video)" },
 ];
 
 export const navItems = [

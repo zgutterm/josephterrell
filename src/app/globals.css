@@ -14,14 +14,16 @@
   --font-body: var(--font-dm-sans);
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  background: var(--color-brand-dark);
+  background: #0A0A0A;
   color: var(--color-brand-cream);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 ::selection {
